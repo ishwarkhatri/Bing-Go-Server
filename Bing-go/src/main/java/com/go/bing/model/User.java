@@ -1,13 +1,30 @@
 package com.go.bing.model;
 
-public class User {
+import java.io.Serializable;
 
+import javax.validation.constraints.NotNull;
+
+import org.springframework.data.annotation.Id;
+
+public class User implements Serializable {
+
+	
+	private static final long serialVersionUID = 1L;
+	@Id
 	private String userId;
+	@NotNull
 	private String password;
+	@NotNull
 	private String firstName;
+	@NotNull
 	private String lastName;
+	@NotNull
 	private String community;
+	@NotNull
 	private String emailId;
+	@NotNull
+	private USER_STATUS status;
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -43,6 +60,12 @@ public class User {
 	}
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
+	}
+	public USER_STATUS getStatus() {
+		return status;
+	}
+	public void setStatus(USER_STATUS status) {
+		this.status = status;
 	}
 
 }
