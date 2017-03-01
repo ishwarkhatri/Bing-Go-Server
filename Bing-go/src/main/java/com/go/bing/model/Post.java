@@ -4,18 +4,26 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
+@Entity
 public class Post implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
+	@GeneratedValue
 	private Long postId;
 	private String postMessage;
-	private String postedBy;
+	@ManyToMany
+	private User postedBy;
 	private Date date;
-	private List<Comment> comments;
 	private String community;
+	@OneToMany
+	private List<Comment> comments;
 
 	public Long getPostId() {
 		return postId;
@@ -29,10 +37,10 @@ public class Post implements Serializable {
 	public void setPostMessage(String postMessage) {
 		this.postMessage = postMessage;
 	}
-	public String getPostedBy() {
+	public User getPostedBy() {
 		return postedBy;
 	}
-	public void setPostedBy(String postedBy) {
+	public void setPostedBy(User postedBy) {
 		this.postedBy = postedBy;
 	}
 	public Date getDate() {
