@@ -9,9 +9,10 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import com.go.bing.model.Post;
 
 @RepositoryRestResource(collectionResourceRel="posts", path="posts")
-public interface PostRepository extends MongoRepository<Post, Long> {
+public interface PostRepository extends MongoRepository<Post, String> {
 	
 	/*** GET QUERIES ****/
 	List<Post> findByCommunity(@Param("community") String community);
 	
+	Post findById(@Param("id") String id);
 }

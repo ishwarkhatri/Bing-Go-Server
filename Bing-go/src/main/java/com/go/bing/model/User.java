@@ -25,6 +25,21 @@ public class User implements Serializable {
 	@NotNull
 	private USER_STATUS status;
 	
+	private String newCommunity;
+	private String newCommunityDescription;
+	
+	public String getNewCommunity() {
+		return newCommunity;
+	}
+	public void setNewCommunity(String newCommunity) {
+		this.newCommunity = newCommunity;
+	}
+	public String getNewCommunityDescription() {
+		return newCommunityDescription;
+	}
+	public void setNewCommunityDescription(String newCommunityDescription) {
+		this.newCommunityDescription = newCommunityDescription;
+	}
 	public String getUserId() {
 		return userId;
 	}

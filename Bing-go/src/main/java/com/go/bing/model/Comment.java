@@ -16,7 +16,7 @@ public class Comment implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private long commentId;
+	private String id;
 	private String commentMessage;
 	@ManyToOne
 	private User commentedBy;
@@ -32,12 +32,12 @@ public class Comment implements Serializable {
 		this.date = date;
 	}
 
-	public long getCommentId() {
-		return commentId;
+	public String getId() {
+		return id;
 	}
 
-	public void setCommentId(long commentId) {
-		this.commentId = commentId;
+	public void setCommentId(String id) {
+		this.id = id;
 	}
 
 	public Post getPost() {

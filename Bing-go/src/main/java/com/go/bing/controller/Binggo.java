@@ -1,10 +1,12 @@
 package com.go.bing.controller;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-@SpringBootApplication
+@EnableAutoConfiguration
+@SpringBootApplication(scanBasePackages={"com.go.bing"})
 @EnableMongoRepositories("com.go.bing.repository")
 public class Binggo {
 

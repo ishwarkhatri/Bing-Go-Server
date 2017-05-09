@@ -10,23 +10,44 @@ import org.springframework.data.annotation.Id;
 @Entity
 public class Event {
 
-	@Id
-	@GeneratedValue
-	private long id;
+	private @Id @GeneratedValue String id;
 	private String name;
 	private Date startDate;
+	private String startDateString;
 	private Date endDate;
+	private String endDateString;
 	private int startHour;
 	private int startMin;
 	private int endHour;
 	private int endMin;
 	private String location;
 	private String description;
+	private boolean isOngoing;
+	private boolean isPast;
+	private boolean isUpcoming;
 
-	public long getId() {
+	public boolean isOngoing() {
+		return isOngoing;
+	}
+	public void setOngoing(boolean isOngoing) {
+		this.isOngoing = isOngoing;
+	}
+	public boolean isPast() {
+		return isPast;
+	}
+	public void setPast(boolean isPast) {
+		this.isPast = isPast;
+	}
+	public boolean isUpcoming() {
+		return isUpcoming;
+	}
+	public void setUpcoming(boolean isUpcoming) {
+		this.isUpcoming = isUpcoming;
+	}
+	public String getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -34,6 +55,18 @@ public class Event {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getStartDateString() {
+		return startDateString;
+	}
+	public void setStartDateString(String startDateString) {
+		this.startDateString = startDateString;
+	}
+	public String getEndDateString() {
+		return endDateString;
+	}
+	public void setEndDateString(String endDateString) {
+		this.endDateString = endDateString;
 	}
 	public Date getStartDate() {
 		return startDate;
